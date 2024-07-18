@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "astro": "^4.11.6",
-    "pocketbase": "^0.21.3"
+    "pocketbase": "^0.21.3",
+    "prettier": "^3.3.3"
   }
 }
