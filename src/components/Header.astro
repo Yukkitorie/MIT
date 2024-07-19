@@ -1,31 +1,25 @@
 ---
-
+import { Image } from "astro:assets";
+import Logo from "../assets/logo_mit.png";
+const currentPath = Astro.url.pathname;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	</head>
-    <body>
-        <div id="main">
-			<div class="header">
-				<div class="-wrapper">
-					<div>Logo</div>
-					<div class="-links">
-						<a class="-item" href="/">Home</a>
-						<a class="-item" href="/knowledgebase">Knowledge Base</a>
-						<a class="-item" href="/about-us">About Us</a>
-					</div>
-				</div>
-			</div>
-    </body>
-</html>
-
+<header>
+	<div class="-wrapper">
+		<a href="/">
+			<Image src={Logo} class="-img" alt="" />
+		</a>
+		<div class="-links">
+			<a class="-item" href="/">Home</a>
+			<a class="-item" href="/knowledgebase">Knowledge Base</a>
+			<a class="-item" href="/about-us">About Us</a>
+		</div>
+	</div>
+</header>
 
 <style>
-	.header {
-		background: #7B7979;
+	header {
+		background: var(--header);
 		height: 60px;
 		width: 100%;
 		.-wrapper {
@@ -34,6 +28,10 @@
 			align-items: center;
 			padding: 0 40px;
 			height: 100%;
+			.-img {
+				height: 50px;
+				width: auto;
+			}
 			.-links {
 				display: flex;
 				gap: 35px;
@@ -41,8 +39,11 @@
 					color: #000000;
 					font-size: 24px;
 					&:hover {
-						background-color: #EF802F;
+						background-color: #ef802f;
 						color: #000;
+					}
+					&.active {
+						color: #ef802f;
 					}
 				}
 			}
