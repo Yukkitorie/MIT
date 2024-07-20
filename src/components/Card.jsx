@@ -1,14 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { client, getImageUrl } from '../lib/pocketbase';
 
-// import Lan from "../assets/img/Lan.png"
+export default function Card({ img }) {
+	const [item, setItem] = useState([]);	
 
-export default function Card({img, title}) {
-return (
-	<div className='card'>
-		<img src={img} className='-img' alt='wtf'/>
-		<div className='-container'>
-			<div className='-title'>{title}</div>	
-		</div>
-	</div>
-)
+	const fetchData = async () => {
+		try {
+			const res = await client.collection("posts").getFullList();
+			setItem(res);
+		} catch (error) {
+			console.error('Error fetching data:', error);
+		}
+	};
+
+	useEffect(() => {
+		fetchData();
+	}, []);3
+	return (
+		<>
+			{item.length > 0 ? (
+				item.map((post) => (
+					<>
+					<div key={post.id} className='card'>
+						<img src={getImageUrl(post)} className='-img' />
+						<div className='-container'>
+							<div className='-title'>{post.title}</div>
+						</div>
+						{/* <div dangerouslySetInnerHTML={{ __html: post.content }}></div> */}
+					</div>
+					</>
+				))
+			) : (
+				<p>Loading...</p>
+			)}
+		</>
+	);
 }
