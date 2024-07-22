@@ -5,6 +5,7 @@ export default function Post() {
 	const [item, setItem] = useState(null);
 	const urlSearchParams = new URLSearchParams(window.location.search);
 	const params = Object.fromEntries(urlSearchParams.entries());
+
 	const fetchData = async () => {
 		const param = params.name;
 		try {
@@ -20,19 +21,19 @@ export default function Post() {
 	useEffect(() => {
 		fetchData();
 	}, []);
+
 	return (
 		<>
 			{item !== null ? 
-				<>
-					<div key={item.id} className='card'>
-						<img src={getImageUrl(item)} className='-img' />
-						<div className='-container'>
-							<div className='-title'>{item.title}</div>
-						</div>
+				<div className="blog-page">
+					<div className="blog-header">
+						<h1 className="blog-title">{item.title}</h1>
+						<p className="blog-date">Publication Date: {new Date(item.created).toLocaleDateString()}</p>
 					</div>
-					<div dangerouslySetInnerHTML={{ __html: item.content }}></div>
-				</>
-			 	: <p>Loading...</p>
+					<img src={getImageUrl(item)} alt={item.title} className="blog-image" />
+					<div className="blog-content" dangerouslySetInnerHTML={{ __html: item.content }}></div>
+				</div>
+			: <p>Loading...</p>
 			}
 		</>
 	);
