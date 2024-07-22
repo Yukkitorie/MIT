@@ -1,16 +1,8 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro"
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Post from "../../components/Post.jsx";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>ASStro</title>
-	</head>
-	<BaseLayout>
-		<h1>Python</h1>
-	</BaseLayout>
-</html>
+<BaseLayout>
+	<Post client:only />
+</BaseLayout>

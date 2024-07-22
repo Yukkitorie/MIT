@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Card from "../components/Card.jsx";
+import PostList from "../components/PostList.jsx";
 ---
 
 <BaseLayout>
 	<div class="container">
 		<div class="grid">
-			<Card client:only img="Lan.png" />
+			<PostList client:only img="Lan.png" />
 		</div>
 	</div>
 </BaseLayout>

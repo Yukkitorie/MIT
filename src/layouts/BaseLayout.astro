@@ -10,11 +10,13 @@ import "../base.css";
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
-		<Header />
-		<article id="content">
-			<slot />
-		</article>
-		<Footer />
+		<div id="main">
+			<Header />
+			<article id="content">
+				<slot />
+			</article>
+			<Footer />
+		</div>
 	</body>
 </html>
 
@@ -22,11 +24,12 @@ import "../base.css";
 	body {
 		padding: 0;
 		margin: 0;
-		width: 100%;
+		background: var(--background, #737373);
+	}
+	#main {
 		display: flex;
 		min-height: 100vh;
 		flex-direction: column;
-		background: var(--background, #737373);
 	}
 	#content {
 		display: flex;
