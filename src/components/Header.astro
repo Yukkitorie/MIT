@@ -1,14 +1,16 @@
 ---
 import { Image } from "astro:assets";
 import Logo from "../assets/logo_mit.png";
+import Burger from "./Burger.astro";
 const currentPath = Astro.url.pathname;
 ---
 
 <header>
 	<div class="-wrapper">
 		<a href="/">
-			<Image src={Logo} class="-img" alt="" />
+			<Image src={Logo} class="-img" alt="Logo" />
 		</a>
+		<Burger />
 		<div class="-links">
 			<a class="-item" href="/">Home</a>
 			<a class="-item" href="/knowledgebase">Knowledge Base</a>
@@ -29,28 +31,34 @@ const currentPath = Astro.url.pathname;
 			padding: 0 40px;
 			height: 100%;
 			.-img {
-				height: 50px;
-				width: auto;
-			}
-			.-links {
-				display: flex;
-				gap: 35px;
-				.-item {
-					color: #000000;
-					font-size: 24px;
-					&:hover {
-						background-color: #ef802f;
-						color: #000;
-					}
-					&.active {
-						color: #ef802f;
-					}
-				}
-			}
+		height: 50px;
+		width: auto;
+	}
+	}
+	}
+
+	.-links {
+		display: flex;
+		gap: 35px;
+	}
+	.-item {
+		color: #000000;
+		font-size: 24px;
+		&:hover {
+			background-color: #ef802f;
+			color: #000;
+		}
+		&.active {
+			color: #ef802f;
 		}
 	}
 	a {
 		color: #000;
 		text-decoration: none;
+	}
+	@media screen and (max-width: 540px) {
+		.-links {
+			display: none;
+		}
 	}
 </style>
