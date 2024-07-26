@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import Logo from "../assets/logo_mit.png";
 import Burger from "./Burger.astro";
-const currentPath = Astro.url.pathname;
 ---
 
 <header>
@@ -11,11 +10,11 @@ const currentPath = Astro.url.pathname;
 			<Image src={Logo} class="-img" alt="Logo" />
 		</a>
 		<Burger />
-		<!-- <div class="-links">
+		<div class="-links">
 			<a class="-item" href="/">Home</a>
 			<a class="-item" href="/knowledgebase">Knowledge Base</a>
 			<a class="-item" href="/about-us">About Us</a>
-		</div> -->
+		</div>
 	</div>
 </header>
 
@@ -61,4 +60,5 @@ const currentPath = Astro.url.pathname;
 			display: none;
 		}
 	}
+
 </style>

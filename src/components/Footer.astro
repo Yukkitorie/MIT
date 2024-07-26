@@ -4,8 +4,8 @@
 
 <footer>
     <div class="-wrapper">
-        <div>© 2024 MIT. All rights reserved.</div>
-        <div>Contact Us: kiseleowmish3101@gmail.com</div>
+        <div clas="-rights">© 2024 MIT. All rights reserved.</div>
+        <div class= "-email">Contact Us: kiseleowmish3101@gmail.com</div>
     </div>
 </footer>
 <style>
@@ -16,9 +16,14 @@
         .-wrapper {
             height: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
             padding: 0 40px;
+        }
+    }
+    @media screen and (max-width: 620px) {
+        .-email{
+            display: none;
         }
     }
 </style>
