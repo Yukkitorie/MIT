@@ -1,0 +1,44 @@
+<nav class="mobile-menu">
+	<div class="-wrapper">
+        <a class="-item" href="/">Home</a>
+        <a class="-item" href="/knowledgebase">Knowledge Base</a>
+        <a class="-item" href="/about-us">About Us</a>
+</nav>
+<style>
+	.mobile-menu {
+		z-index: 10;
+		position: fixed;
+		bottom: 0;
+		background: #7b7979;
+		width: 100vw;
+		border: 0;
+		min-height: 50px;
+		@media (min-width: 530px) {
+			display: none;
+		}
+		.-wrapper {
+			min-height: 50px;
+			padding: 0 20px;
+			width: 1fr;
+			font-weight: 500;
+			color: #fff;
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 10px;
+			justify-content: space-between;
+		}
+
+		.-item {
+			color: #fff;
+			font-size: 24px;
+			text-decoration: none;
+			&:hover {
+				color: aqua;
+			}
+			&.active {
+				color: aqua;
+			}
+		}
+	}
+</style>
