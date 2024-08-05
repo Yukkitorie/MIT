@@ -92,3 +92,35 @@
     border-radius: 10px;
     margin: 20px 0;
 }
+
+/* .-navbar{
+    height: 50px;
+	width: 100%;
+	background-color: aquamarine;
+	position: fixed;
+	z-index: 50;
+
+}
+
+.-burger-btn{
+	width: 30px;
+	height: 30px;
+	margin-left: 20px;
+	position: relative;
+}
+.-burger-btn:before{
+	content:"";
+	position: absolute;
+	top: 0;
+	width: 30px;
+	height: 2px;
+	background-color: #000;
+}
+.-burger-btn:after{
+	content:"";
+	position: absolute;
+	bottom: 0;
+	width: 30px;
+	height: 2px;
+	background-color: #000;
+} */
