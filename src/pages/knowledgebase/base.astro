@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import PostList from "../../components/PostList"
+---
+
+<BaseLayout>
+	<div class="container">
+		<div class="grid">
+			<PostList client:only img="Lan.png" />
+		</div>
+	</div>
+</BaseLayout>
+
+<style>
+	.grid {
+		display: grid;
+		/* Вариант 2 для очень умных */
+		/* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  */
+		place-items: center;
+		gap: 20px 15px; /* Вертикаль вначале потом по горизонт */
+		grid-template-columns: 1fr 1fr 1fr;
+		@media (max-width: 1200px) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@media (max-width: 800px) {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
