@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import IconsLinks from "../components/IconsLinks.astro"
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
@@ -13,35 +13,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 	<body>
 		<BaseLayout>
 			<div class="container">
-				
-				<div class="aboutme"><h1>Hello World</h1></div>
-				
-				<div class="mymission"><h1>Lorem ipsum dolor sit.</h1></div>
-			</div>
+				<div class="content">
+					<p>Hello, World!</p>
+				</div>
+			<IconsLinks />
 		</BaseLayout>
 	</body>
 </html>
-
 <style>
-.container {
-	width: 100%;
-	height: 5px;
-    display: grid;
-	place-items: center;
-	gap:150px;
-	grid-template-columns: 1fr 1fr;
-	
-}
-.aboutme {
-	width: 300px;
-	aspect-ratio: 1;
-	background-color: #898989;
-	border-radius: 30px;
-}
-.mymission {
-	width: 500px;
-	aspect-ratio: 1;
-	background-color: #898989;
-	border-radius: 30px;
-}
 </style>
