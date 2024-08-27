@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import Logo from "../assets/logo_mit.png";
+import Logo from "../assets/logo.svg";
 import Burger from "./Burger.astro";
 ---
 
@@ -21,7 +21,7 @@ import Burger from "./Burger.astro";
 <style>
 	header {
 		background: var(--header);
-		height: 60px;
+		height: 3.75rem;
 		width: 100%;
 		.-wrapper {
 			display: flex;
@@ -41,18 +41,11 @@ import Burger from "./Burger.astro";
 		gap: 35px;
 	}
 	.-item {
-		color: #000000;
+		color: #ffffff;
 		font-size: 24px;
-		&:hover {
-			background-color: #ef802f;
-			color: #000;
-		}
-		&.active {
-			color: #ef802f;
-		}
 	}
 	a {
-		color: #000;
+		color: #ffffff;
 		text-decoration: none;
 	}
 	@media screen and (max-width: 540px) {
